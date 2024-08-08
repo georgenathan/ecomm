@@ -6,7 +6,36 @@ const AddProduct = () => {
     const [product_name, setProducts] = useState([]);
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const [category_id, setCategory_id] = useState("");
+    const [category_id, setCategory_id] = useState([]);
+
+  const [options, setOptions] = useState([]);
+  // State to manage loading status
+  const [loading, setLoading] = useState(true);
+  // State to handle errors
+  const [error, setError] = useState(null);
+
+   // Fetch data from your backend
+  useEffect(() => {
+    // Fetch data from your backend
+    const fetchOptions = async () => {
+      try {
+        const response = await fetch('api/categorys'); // Replace with your API endpoint
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setCategory_id(data); // Assume data is an array of options
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchOptions();
+  }, []); 
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
 
      useEffect(() => {
         getProducts();
@@ -64,16 +93,12 @@ const AddProduct = () => {
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
 
-                <select
-                  id="country"
-                  name="country"
-                  onChange={(e) => setCategory_id(e.target.value)}
-                  className="block w-full rounded-md border-0 py-1.5 
-                  text-gray-900 shadow-sm ring-1 ring-inset 
-                  ring-gray-300 focus:ring-2 focus:ring-inset 
-                  focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
-                >
-                  <option>Select Category</option>
+                <select>
+                  {category_id.map(category_id => (
+                    <option key={category_id.id} value={category_id.id}>
+                      {category_id.title}
+                    </option>
+                  ))}
                 </select>
               </div>
               <button

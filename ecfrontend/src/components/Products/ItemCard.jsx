@@ -22,7 +22,7 @@ const ItemCard = ({data}) => {
                         group-hover:backdrop-blur-sm justify-center 
                         items-center duration-200 rounded-md'>
                             <Button 
-                            text={"Add to Cart"}
+                            text={"View Item"}
                             bgColor={"bg-primary"}
                             textColor={"text-white"}
                             onClick={()=> addItem(data.addItem)}

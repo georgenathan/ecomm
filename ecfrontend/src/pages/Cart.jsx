@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar';
 
 const Cart = () => {
         const { 
-            isEmpty,
+            isEmpty, 
             totalUniqueItems,
             items,
             totalItems,
@@ -32,7 +32,7 @@ const Cart = () => {
                                         </td>
                                         <td>{item.title}</td>
                                         <td>{item.price}</td>
-                                        <td>Quantity {item.quantity}</td>
+                                        <td>QTY {item.quantity}</td>
                                         <td>
                                             <button 
                                                 className='btn btn-info ms-2'

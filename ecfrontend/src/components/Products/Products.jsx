@@ -2,7 +2,6 @@ import React from 'react'
 import Headings from "../Shared/Headings"
 import ItemCard from './ItemCard'
 
-
 // product image import
 import Img1 from "../../assets/product/p-1.jpg"
 import Img2 from "../../assets/product/p-2.jpg"
@@ -78,8 +77,8 @@ const Products = () => {
   return (
     <div>
       <div className="container">
-      {/* title */}
-        <Headings title="Products" subtitle={"Checkout our Products"}/>
+      {/* HEADING */}
+        <Headings title="Trending Products" subtitle={"Checkout our Products"}/>
       {/* body */}
         <ItemCard data={ItemsData}/>
         <ItemCard data={ItemsData2}/>

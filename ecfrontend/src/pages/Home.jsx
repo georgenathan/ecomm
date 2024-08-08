@@ -7,6 +7,7 @@ import Services from "../components/Services/Services";
 import Banner from "../components/Banner/Banner";
 import headphone from "../assets/hero/headphone.png";
 import watch from "../assets/category/smartwatch2-removebg-preview.png";
+// import ProductDetails from "../components/ProductDetails/ProductDetails"
 
 import Dash from "./Dash"
 
@@ -84,11 +85,13 @@ const BannerItems2 ={
         <Navbar />
         <Hero />
         <Category />
-        <Category2 />
         <Services />
         <Banner data={BannerItems}/>
-        {/* <Products />
-        <Banner data={BannerItems2}/> */}
+        <Category2 />
+        <Products />
+        {/* <ProductDetails /> */}
+        
+        <Banner data={BannerItems2}/>
     </div>
   )
 }

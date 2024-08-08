@@ -9,8 +9,8 @@ const HeroData = [
     {
         id: 1,
         img: Image1,
-        subtitle: "Beats",
-        title: "wirless",
+        subtitle: "Airpods Pro Max",
+        title: "Wireless",
         title2: "HeadSets",
         
     },
@@ -47,7 +47,7 @@ const Hero = () => {
     // rounded-3xl 
   return (
     <div className='container'>
-        <div className='overflow-hidden min-h-[550px] sm:min-h-[650px] hero-bg-color flex justify-center items-center'>
+        <div className='overflow-hidden min-h-[550px] sm:min-h-[650px] hero-bg-color from-gray-300/80 flex justify-center items-center'>
             <div className='container pb-8 sm:pb-0'>
             {/* hero page */}
                 <Slider {...settings}>
@@ -59,14 +59,16 @@ const Hero = () => {
                                     <div className='flex flex-col justify-center gap-5 sm:pl-3 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1'>
                                         <h1 className='text-2xl sm:text-6xl lg:text-2xl font-bold'>{data.subtitle}</h1>
                                         <h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold'>{data.title}</h1>
-                                        <h1 className='text-5xl uppercase text-white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold'>{data.title2}</h1>
-                                        <div>
-                                            <Button 
-                                            text="Shop Now"
-                                            bgColor="bg-primary"
-                                            textColor="text-white"
-                                            />
-                                        </div>
+                                        <h1 className='text-5xl uppercase  dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold'>{data.title2}</h1>
+                                        <a href="/products">
+                                            <div>
+                                                <Button 
+                                                text="Shop Now"
+                                                bgColor="bg-primary"
+                                                textColor="text-white"
+                                                />
+                                            </div>
+                                        </a>
                                     </div>
 
                                     {/* image section */}
